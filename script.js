@@ -11,7 +11,7 @@ const modalTitle = document.getElementById("project-modal-title");
 const modalDescription = document.getElementById("project-modal-description");
 const modalTags = document.getElementById("project-modal-tags");
 const modalClose = document.querySelector(".project-modal-close");
-const savedTheme = localStorage.getItem("portfolio-theme") || "default";
+const savedTheme = localStorage.getItem("portfolio-theme") || "silver";
 const savedLanguage = localStorage.getItem("portfolio-language") || "fr";
 
 let currentLanguage = savedLanguage;
@@ -70,12 +70,16 @@ const translations = {
             ".project-card[data-project='stellio'] > p": "Conception et developpement complet d'une application mobile de localisation en temps reel des stations-service, avec logique metier, geolocalisation et tests.",
             ".project-card[data-project='event'] h3": "Projet collaboratif mobile front-end",
             ".project-card[data-project='event'] > p": "Participation au developpement front-end d'une application de reseautage evenementiel dans un cadre collaboratif depuis 2025.",
+            ".project-card[data-project='admin-etudiant'] h3": "Portail Admin Etudiant OCR",
+            ".project-card[data-project='admin-etudiant'] > p": "Application web de gestion de dossiers etudiants avec recherche, creation, edition, numerisation OCR des attestations scannees et synchronisation Firebase avec secours local.",
             ".project-card[data-project='gasid'] .preview-project": '<i class="fa-solid fa-eye"></i> Explorer',
             ".project-card[data-project='stellio'] .preview-project": '<i class="fa-solid fa-eye"></i> Explorer',
             ".project-card[data-project='event'] .preview-project": '<i class="fa-solid fa-eye"></i> Explorer',
+            ".project-card[data-project='admin-etudiant'] .preview-project": '<i class="fa-solid fa-eye"></i> Explorer',
             ".project-card[data-project='gasid'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Echanger',
             ".project-card[data-project='stellio'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Echanger',
             ".project-card[data-project='event'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Echanger',
+            ".project-card[data-project='admin-etudiant'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Echanger',
             "#service > p": "EXPERTISE",
             "#service h1": "Ce que je peux apporter",
             ".service-card:nth-child(1) h3": "Monetique et paiement",
@@ -121,6 +125,13 @@ const translations = {
                 description: "Participation au front-end d'une solution mobile collaborative centrée sur l'expérience événementielle, l'interaction et la fluidité des parcours utilisateurs.",
                 tags: ["Mobile", "Front-end", "Collaboration", "UI"],
                 image: "images/event.png"
+            },
+            "admin-etudiant": {
+                kicker: "Projet de gestion documentaire",
+                title: "Portail Admin Etudiant OCR",
+                description: "Application React conÃ§ue pour gerer les dossiers etudiants, automatiser l'extraction d'informations depuis des attestations scannees via OCR, et securiser la persistance avec Firebase, validation de schema et stockage local de secours.",
+                tags: ["React", "Firebase", "OCR", "Firestore", "Responsive"],
+                image: "images/etu.png"
             }
         }
     },
@@ -176,12 +187,16 @@ const translations = {
             ".project-card[data-project='stellio'] > p": "Designed and fully developed a mobile application for real-time gas station location, with business logic, geolocation, and testing.",
             ".project-card[data-project='event'] h3": "Collaborative mobile front-end project",
             ".project-card[data-project='event'] > p": "Contributed to the front-end development of an event networking app in a collaborative setting since 2025.",
+            ".project-card[data-project='admin-etudiant'] h3": "Student Admin OCR Portal",
+            ".project-card[data-project='admin-etudiant'] > p": "Web app for student record management with search, creation, editing, OCR scanning of certificates, and Firebase synchronization with local fallback storage.",
             ".project-card[data-project='gasid'] .preview-project": '<i class="fa-solid fa-eye"></i> Explore',
             ".project-card[data-project='stellio'] .preview-project": '<i class="fa-solid fa-eye"></i> Explore',
             ".project-card[data-project='event'] .preview-project": '<i class="fa-solid fa-eye"></i> Explore',
+            ".project-card[data-project='admin-etudiant'] .preview-project": '<i class="fa-solid fa-eye"></i> Explore',
             ".project-card[data-project='gasid'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Discuss',
             ".project-card[data-project='stellio'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Discuss',
             ".project-card[data-project='event'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Discuss',
+            ".project-card[data-project='admin-etudiant'] .btns a:last-child": '<i class="fas fa-external-link-alt"></i> Discuss',
             "#service > p": "EXPERTISE",
             "#service h1": "What I can bring",
             ".service-card:nth-child(1) h3": "Payments and transaction systems",
@@ -228,6 +243,13 @@ const translations = {
                 tags: ["Mobile", "Front-end", "Collaboration", "UI"]
                 ,
                 image: "images/event.png"
+            },
+            "admin-etudiant": {
+                kicker: "Document management project",
+                title: "Student Admin OCR Portal",
+                description: "React application built to manage student records, automate information extraction from scanned enrollment certificates through OCR, and keep data resilient with Firebase, schema validation, and local fallback storage.",
+                tags: ["React", "Firebase", "OCR", "Firestore", "Responsive"],
+                image: "images/etu.png"
             }
         }
     }

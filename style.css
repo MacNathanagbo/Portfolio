@@ -1,21 +1,21 @@
 :root {
-    --accent: #ff4d6d;
-    --accent-deep: #7a0c2e;
-    --accent-soft: #ff9db3;
-    --accent-glow: rgba(255, 80, 120, 0.4);
-    --accent-glow-strong: rgba(255, 80, 120, 0.6);
-    --accent-surface: rgba(255, 80, 120, 0.15);
-    --accent-border: rgba(255, 80, 120, 0.25);
-    --accent-border-strong: rgba(255, 80, 120, 0.35);
-    --accent-shadow: rgba(255, 0, 80, 0.25);
-    --bg-bloom-top: rgba(160, 40, 70, 0.55);
-    --bg-bloom-bottom: rgba(60, 10, 30, 0.85);
-    --panel-tint: rgba(35, 10, 20, 0.9);
-    --panel-tint-deep: rgba(12, 6, 10, 0.95);
-    --menu-tint: rgba(120, 10, 25, 0.45);
-    --chip-base: #14060c;
-    --tape-top: #2a0b12;
-    --tape-bottom: #14060c;
+    --accent: #d8dde3;
+    --accent-deep: #7e8a96;
+    --accent-soft: #eef2f5;
+    --accent-glow: rgba(216, 221, 227, 0.34);
+    --accent-glow-strong: rgba(216, 221, 227, 0.55);
+    --accent-surface: rgba(216, 221, 227, 0.14);
+    --accent-border: rgba(216, 221, 227, 0.24);
+    --accent-border-strong: rgba(216, 221, 227, 0.34);
+    --accent-shadow: rgba(216, 221, 227, 0.22);
+    --bg-bloom-top: rgba(133, 144, 156, 0.45);
+    --bg-bloom-bottom: rgba(43, 50, 58, 0.84);
+    --panel-tint: rgba(34, 40, 47, 0.9);
+    --panel-tint-deep: rgba(14, 18, 22, 0.95);
+    --menu-tint: rgba(88, 96, 106, 0.42);
+    --chip-base: #11161b;
+    --tape-top: #29313a;
+    --tape-bottom: #11161b;
     --section-y: 160px;
     --section-x: clamp(20px, 6vw, 120px);
 }
@@ -38,6 +38,26 @@ body[data-theme="emerald"] {
     --chip-base: #071611;
     --tape-top: #103226;
     --tape-bottom: #071611;
+}
+
+body[data-theme="red"] {
+    --accent: #ff4d6d;
+    --accent-deep: #7a0c2e;
+    --accent-soft: #ff9db3;
+    --accent-glow: rgba(255, 80, 120, 0.4);
+    --accent-glow-strong: rgba(255, 80, 120, 0.6);
+    --accent-surface: rgba(255, 80, 120, 0.15);
+    --accent-border: rgba(255, 80, 120, 0.25);
+    --accent-border-strong: rgba(255, 80, 120, 0.35);
+    --accent-shadow: rgba(255, 0, 80, 0.25);
+    --bg-bloom-top: rgba(160, 40, 70, 0.55);
+    --bg-bloom-bottom: rgba(60, 10, 30, 0.85);
+    --panel-tint: rgba(35, 10, 20, 0.9);
+    --panel-tint-deep: rgba(12, 6, 10, 0.95);
+    --menu-tint: rgba(120, 10, 25, 0.45);
+    --chip-base: #14060c;
+    --tape-top: #2a0b12;
+    --tape-bottom: #14060c;
 }
 
 body[data-theme="blue"] {
@@ -783,8 +803,9 @@ hr {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: auto;
+    align-items: stretch;
 }
 
 /* PROJECT CARD */
@@ -798,6 +819,9 @@ hr {
     transition: 0.35s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card::before {
@@ -842,15 +866,25 @@ hr {
 }
 
 /* TAGS */
+.project-card .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+}
+
 .project-card .skills a {
-    display: inline-block;
-    margin: 4px 6px 0 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 6px 12px;
     font-size: 11px;
     border-radius: 20px;
     color: var(--accent-soft);
     border: 1px solid var(--accent-border-strong);
     background: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 /* BUTTONS */
@@ -860,7 +894,17 @@ hr {
     margin-top: 12px;
 }
 
+@media (min-width: 1101px) {
+    .projects-container {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
 .project-card .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0;
     padding: 8px 14px;
     border-radius: 20px;
     font-size: 13px;
@@ -1534,6 +1578,7 @@ hr {
 }
 
 .theme-color.emerald { background: linear-gradient(135deg, #36e2a1, #0f7a58); }
+.theme-color.red { background: linear-gradient(135deg, #ff4d6d, #7a0c2e); }
 .theme-color.blue { background: linear-gradient(135deg, #5ba7ff, #174f96); }
 .theme-color.gold { background: linear-gradient(135deg, #ffbf47, #9a5a00); }
 .theme-color.silver { background: linear-gradient(135deg, #d8dde3, #7e8a96); }
